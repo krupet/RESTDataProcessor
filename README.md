@@ -22,15 +22,16 @@ If we *POST* this file or few files on deployed service by ```<some_host_ip>:808
 
 ## Requirements
 
-* Apache Maven installed in order to build the project
-* Oracle Java 8 JDK or JRE installed in order to run the project.
+* Git.
+* Apache Maven 3.
+* Oracle Java 8 JDK or JRE.
 
 ## How to run
 
 Type in a console next command:
 
 ```sh
-  $ git clone <repository>
+  $ git clone https://github.com/krupet/RESTDataProcessor.git
   $ cd <folder with cloned project>
   $ mvn clean install
   $ mvn exec:java
@@ -39,7 +40,7 @@ Type in a console next command:
 or
 
 ```sh
-  $ git clone <repository>
+  $ git clone https://github.com/krupet/RESTDataProcessor.git
   $ cd <folder with cloned project>
   $ mvn clean deploy
 ```
@@ -78,6 +79,21 @@ Get results of file parsing:
 Http method - ```GET```, URL - ```localhost:8080/dataProcessor```
 ```sh
   $ curl -v http://localhost:8080/dataProcessor
+
+  *   Trying 127.0.0.1...
+  * Connected to localhost (127.0.0.1) port 8080 (#0)
+  > GET /dataProcessor HTTP/1.1
+  > Host: localhost:8080
+  > User-Agent: curl/7.43.0
+  > Accept: */*
+  >
+  < HTTP/1.1 200 OK
+  < Date: Wed, 27 Jul 2016 20:12:39 GMT
+  < Content-Type: application/json;charset=UTF-8
+  < Transfer-Encoding: chunked
+  < Server: Jetty(9.4.0.M0)
+  <
+  * Connection #0 to host localhost left intact
 
   [
     {"value":"AA", "count":10},

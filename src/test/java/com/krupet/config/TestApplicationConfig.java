@@ -26,7 +26,7 @@ public class TestApplicationConfig {
 
     @Bean
     public DataProcessorService dataProcessorService() {
-        ExecutorService executor = MoreExecutors.sameThreadExecutor();
+        ExecutorService executor = MoreExecutors.newDirectExecutorService();
         return new DataProcessorServiceImpl(executor);
     }
 

@@ -30,10 +30,7 @@ public class DataProcessorServiceTest extends BaseWebAppTest {
 
         Map<String, Long> expected = new HashMap<>();
 
-//        Arrays.stream(string.split("\n")).forEach(word -> expected.compute(word, (k, v) -> v == null ? 1L : v + 1L));
-
         Arrays.stream(string.split("\n")).forEach(word -> expected.put(word, expected.getOrDefault(word, 0L) + 1L));
-
 
         ResultData[] expectedResult = expected.entrySet().stream()
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
